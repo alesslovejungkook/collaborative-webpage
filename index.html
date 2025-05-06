@@ -1,31 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Page Title</title>
+  <meta charset="UTF-8">
+  <title>Collaborative Webpage</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #333;
+      padding: 1em;
+      color: white;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #444;
+      overflow: hidden;
+    }
+
+    nav a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    section {
+      display: none;
+      padding: 20px;
+    }
+
+    .active {
+      display: block;
+    }
+  </style>
 </head>
 <body>
 
-    <h1>May 12, 2025 a special, non-working day for midterm elections: Palace</h1>
-    <p>The Commission on Elections personnel, in coordination with the Quezon City Local Government Unit, 
-    load election paraphernalia including sealed ballot boxes and vote counting machines onto traditional
-    jeepneys at the Amoranto Sports Complex on Saturday, May 3, 2025. The deployment is part of the early 
-    distribution of materials to various polling precincts across the city in preparation for the May 12 
-    National and Local Elections. Security personnel and election officers are also on-site to ensure proper
-     handling and transport of the equipment. Maria Tan, ABS-CBN News</p>
-    
-    
-    <p>MANILA — Malacañang on Tuesday declared May 12, 2025 a special, non-working holiday for the midterm elections.</p>
+  <!-- Page Title -->
+  <header>
+    <h1>Welcome to My Webpage</h1>
+  </header>
 
-    <h3>Contact Information</h3>
-    <p>You can reach me at: <a href="mailto:someone@example.com">someone@example.com</a></p>
+  <!-- Navigation Bar -->
+  <nav>
+    <a onclick="showSection('home')">Home</a>
+    <a onclick="showSection('about')">About</a>
+    <a onclick="showSection('projects')">Projects</a>
+    <a onclick="showSection('contact')">Contact</a>
+  </nav>
 
-    <h3>Image Example</h3>
-    <img src="path/to/your/image.jpg" alt="An example image">
+  <!-- Content Sections -->
+  <main>
+    <section id="home" class="active">
+      <h2>May 12, 2025 a special, non-working day for midterm elections: Palace</h2>
+      <p>
+        The Commission on Elections personnel, in coordination with the Quezon City Local Government Unit,
+        load election paraphernalia including sealed ballot boxes and vote counting machines onto traditional
+        jeepneys at the Amoranto Sports Complex on Saturday, May 3, 2025 The deployment is part of the early
+        distribution of materials to various polling precincts across the city in preparation for the May 12 
+        National and Local Elections. Security personnel and election officers are also on-site to ensure proper
+        handling and transport of the equipment. Maria Tan, ABS-CBN New. </p>
+    </section>
 
-    <h3>Link Example</h3>
-    <p>Visit my <a href="https://www.example.com" target="_blank">website</a>.</p>
+    <section id="about">
+      <h2>About Comelec</h2>
+      <p>The deployment is part of the early distribution of materials to various polling precincts across the
+         city in preparation for the May 12 National and Local Elections. Security personnel and election officers
+          are also on-site to ensure proper handling and transport of the equipment. Maria Tan, ABS-CBN News
+
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Our Projects</h2>
+      <p>We are working on election awareness, online voting systems, and civic education initiatives.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Email us at email.lcup.edu.ph</p>
+    </section>
+  </main>
+
+  <!-- JavaScript to switch sections -->
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll("main section");
+      sections.forEach(section => {
+        section.classList.remove("active");
+      });
+      document.getElementById(sectionId).classList.add("active");
+    }
+  </script>
 
 </body>
 </html>
