@@ -2,22 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Collaborative Webpage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Philippine Elections 2025</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
     }
 
     header {
-      background-color: #333;
-      padding: 1em;
+      background-color: #1E3A8A;
       color: white;
+      padding: 2em 1em;
       text-align: center;
     }
 
+    .header-image {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+    }
+
     nav {
-      background-color: #444;
+      background-color: #111827;
       overflow: hidden;
     }
 
@@ -28,80 +36,98 @@
       text-align: center;
       padding: 14px 20px;
       text-decoration: none;
-      cursor: pointer;
+      transition: background-color 0.3s;
     }
 
     nav a:hover {
-      background-color: #ddd;
-      color: black;
+      background-color: #374151;
+    }
+
+    main {
+      padding: 20px;
     }
 
     section {
       display: none;
-      padding: 20px;
+      animation: fadeIn 0.5s ease-in-out;
     }
 
-    .active {
+    section.active {
       display: block;
+    }
+
+    h2 {
+      color: #1E3A8A;
+    }
+
+    footer {
+      background-color: #1E3A8A;
+      color: white;
+      text-align: center;
+      padding: 1em;
+      margin-top: 40px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Page Title -->
   <header>
-    <h1>ELECTION 2025</h1>
+    <h1>Philippine Elections 2025</h1>
+    <p>Your vote matters. Be informed. Be involved.</p>
   </header>
 
-  <!-- Navigation Bar -->
+  <img class="header-image" src="election.jpg" alt="Philippine Election">
+
   <nav>
     <a onclick="showSection('home')">Home</a>
-    <a onclick="showSection('news')">News</a>
-    <a onclick="showSection('updates')">Updates</a>
+    <a onclick="showSection('about')">About</a>
+    <a onclick="showSection('projects')">Projects</a>
     <a onclick="showSection('contact')">Contact</a>
   </nav>
 
-  <!-- Content Sections -->
   <main>
     <section id="home" class="active">
-      <h2>May 12, 2025 a special, non-working day for midterm elections: Palace</h2>
-      <p>
-        The Commission on Elections personnel, in coordination with the Quezon City Local Government Unit,
-        load election paraphernalia including sealed ballot boxes and vote counting machines onto traditional
-        jeepneys at the Amoranto Sports Complex on Saturday, May 3, 2025 The deployment is part of the early
-        distribution of materials to various polling precincts across the city in preparation for the May 12 
-        National and Local Elections. Security personnel and election officers are also on-site to ensure proper
-        handling and transport of the equipment. Maria Tan, ABS-CBN New. </p>
+      <h2>Election Day Declared a Special Holiday</h2>
+      <p>May 12, 2025 has been declared a special, non-working holiday to allow Filipinos to cast their votes in the national and local midterm elections. This move is aimed at increasing voter turnout and supporting democratic participation.</p>
     </section>
 
     <section id="about">
-      <h2>About Comelec</h2>
-      <p>The deployment is part of the early distribution of materials to various polling precincts across the
-         city in preparation for the May 12 National and Local Elections. Security personnel and election officers
-          are also on-site to ensure proper handling and transport of the equipment. Maria Tan, ABS-CBN News
-
-      </p>
+      <h2>About the Commission on Elections</h2>
+      <p>The Commission on Elections (COMELEC) is the constitutional commission responsible for enforcing all laws related to elections in the Philippines. From voter registration to vote counting, COMELEC ensures a fair, honest, and orderly election process.</p>
     </section>
 
     <section id="projects">
-      <h2>Our Projects</h2>
-      <p>We are working on election awareness, online voting systems, and civic education initiatives.</p>
+      <h2>Ongoing Projects</h2>
+      <ul>
+        <li>Voter Education Campaigns in rural areas</li>
+        <li>Development of an Online Voter Portal</li>
+        <li>Modernized Vote Counting Machines (VCMs)</li>
+        <li>Inclusive Voting for Persons with Disabilities (PWDs)</li>
+      </ul>
     </section>
 
     <section id="contact">
       <h2>Contact Us</h2>
-      <p>Email us at email.lcup.edu.ph</p>
+      <p>Email: support@comelec.gov.ph</p>
+      <p>Phone: (02) 1234 5678</p>
+      <p>Facebook: <a href="https://facebook.com/comelec.ph" target="_blank">COMELEC Philippines</a></p>
     </section>
   </main>
 
-  <!-- JavaScript to switch sections -->
+  <footer>
+    <p>&copy; 2025 Commission on Elections. All rights reserved.</p>
+  </footer>
+
   <script>
-    function showSection(sectionId) {
+    function showSection(id) {
       const sections = document.querySelectorAll("main section");
-      sections.forEach(section => {
-        section.classList.remove("active");
-      });
-      document.getElementById(sectionId).classList.add("active");
+      sections.forEach(section => section.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
     }
   </script>
 
